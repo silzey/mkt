@@ -10,9 +10,9 @@
     :root {
       --main-text: #1d1d1f;
       --light-gray: #f5f5f7;
-      --blue: #0071e3;
-      --dark-blue: #005bb5;
-      --shadow-color: rgba(0, 0, 0, 0.15);
+      --blue: #00aaff;
+      --dark-blue: #0088cc;
+      --shadow-color: rgba(0, 0, 0, 0.2);
     }
 
     * {
@@ -120,22 +120,29 @@
     }
 
     .card {
-      background: #fff;
+      background: linear-gradient(to bottom right, #ffffff, #e6f7ff);
       padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px var(--shadow-color);
-      width: 280px;
-      transition: transform 0.2s ease;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px var(--shadow-color);
+      width: 250px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      perspective: 1000px;
     }
 
     .card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 15px 40px var(--shadow-color);
     }
 
     .card h4 {
       font-size: 1.4rem;
       margin-bottom: 0.5rem;
       color: var(--dark-blue);
+    }
+
+    .card p {
+      font-size: 1rem;
+      color: #333;
     }
 
     .about,
@@ -210,15 +217,23 @@
       <div class="cards">
         <div class="card">
           <h4>Clean Analytics</h4>
-          <p>Get insights with clarity. No clutter, just results.</p>
+          <p>Visualize performance metrics with elegant charts and data panels.</p>
+        </div>
+        <div class="card">
+          <h4>Real-Time Reporting</h4>
+          <p>Stay updated with live dashboards and instant insights.</p>
         </div>
         <div class="card">
           <h4>Smart Automation</h4>
-          <p>Schedule, target, and convert — all with one tap.</p>
+          <p>Automate campaigns and optimize engagement with AI-driven tools.</p>
         </div>
         <div class="card">
-          <h4>Brand Sync</h4>
-          <p>Your visuals, your voice. Keep everything on-brand.</p>
+          <h4>Audience Segmentation</h4>
+          <p>Target the right people at the right time with smart filters.</p>
+        </div>
+        <div class="card">
+          <h4>Conversion Tracking</h4>
+          <p>Monitor user actions and understand what drives results.</p>
         </div>
       </div>
     </div>
@@ -256,3 +271,4 @@
   </script>
 </body>
 </html>
+
