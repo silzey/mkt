@@ -11,6 +11,8 @@
       --main-text: #1d1d1f;
       --light-gray: #f5f5f7;
       --blue: #0071e3;
+      --dark-blue: #005bb5;
+      --shadow-color: rgba(0, 0, 0, 0.15);
     }
 
     * {
@@ -36,7 +38,7 @@
       text-align: center;
       padding: 2rem 0;
       background: #fff;
-      box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px var(--shadow-color);
     }
 
     header h1 {
@@ -53,12 +55,19 @@
       color: var(--main-text);
       margin: 0 1rem;
       font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--blue);
     }
 
     .hero {
-      background-color: #fff;
-      padding: 5rem 1rem;
+      background: linear-gradient(to right, var(--blue), var(--dark-blue));
+      color: #fff;
+      padding: 6rem 1rem;
       text-align: center;
+      box-shadow: 0 6px 16px var(--shadow-color);
     }
 
     .hero h2 {
@@ -75,17 +84,20 @@
 
     .hero .btn {
       display: inline-block;
-      background: var(--blue);
-      color: #fff;
+      background: #fff;
+      color: var(--blue);
       padding: 0.9rem 2rem;
       border-radius: 30px;
       font-size: 1rem;
+      font-weight: 600;
       text-decoration: none;
-      transition: background 0.3s ease;
+      box-shadow: 0 4px 12px var(--shadow-color);
+      transition: background 0.3s ease, color 0.3s ease;
     }
 
     .hero .btn:hover {
-      background: #005bb5;
+      background: #e0e0e0;
+      color: var(--dark-blue);
     }
 
     .features {
@@ -97,6 +109,7 @@
       font-size: 2rem;
       font-weight: 600;
       margin-bottom: 2rem;
+      color: var(--blue);
     }
 
     .cards {
@@ -110,18 +123,19 @@
       background: #fff;
       padding: 2rem;
       border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+      box-shadow: 0 6px 20px var(--shadow-color);
       width: 280px;
       transition: transform 0.2s ease;
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px);
     }
 
     .card h4 {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       margin-bottom: 0.5rem;
+      color: var(--dark-blue);
     }
 
     .about,
@@ -130,6 +144,7 @@
       text-align: center;
       background: #fff;
       margin-top: 2rem;
+      box-shadow: 0 4px 12px var(--shadow-color);
     }
 
     .contact form {
@@ -145,6 +160,7 @@
       border: 1px solid #ccc;
       border-radius: 8px;
       font-size: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
     }
 
     button.btn {
@@ -155,11 +171,12 @@
       border-radius: 30px;
       font-size: 1rem;
       cursor: pointer;
+      box-shadow: 0 4px 12px var(--shadow-color);
       transition: background 0.3s ease;
     }
 
     button.btn:hover {
-      background: #005bb5;
+      background: var(--dark-blue);
     }
 
     footer {
