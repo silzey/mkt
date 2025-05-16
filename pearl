@@ -1,0 +1,21 @@
+your-current-repo/
+└── my-website/
+    ├── index.html
+    ├── analytics.html
+    ├── pos-integration.html
+    ├── email-marketing.html
+    ├── sms-campaigns.html
+    ├── consulting-services.html
+    ├── brand-design.html
+    ├── ad-campaigns.html
+    ├── seo-web.html
+    ├── influencer-collabs.html
+    ├── customer-loyalty.html
+    ├── market-research.html
+    ├── social-strategy.html
+    ├── content-creation.html
+    ├── data-security.html
+    ├── event-promotion.html
+    ├── contact.html
+    ├── about.html
+    └── images/
