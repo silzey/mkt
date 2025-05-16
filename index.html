@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Silzeycom</title>
-  <link rel="icon" href="https://silzey.github.io/mkt/my-website/images/favicon.png" type="image/png">
+  <title>{{TITLE}}</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
   <style>
     body {
@@ -23,31 +22,35 @@
     h1, h3 {
       color: #00aaff;
     }
-    .header-buttons {
-      margin: 1rem 0 0.5rem 0;
-    }
-    .header-buttons button {
-      margin: 0 0.5rem;
-      padding: 0.65rem 1.3rem;
-      background-color: #0088cc;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
-    .header-buttons button:hover {
-      background: #00aaff;
-    }
     p {
       line-height: 1.6;
     }
     a {
       color: #0088cc;
       text-decoration: none;
+    }
+    nav {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    nav a {
+      margin: 0 0.15rem;
+      color: #0088cc;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.4em 1em;
+      border-radius: 4px;
+      transition: background 0.2s, color 0.2s;
+      font-size: 1rem;
+      display: inline-block;
+    }
+    nav a:hover {
+      background: #e6f7ff;
+      color: #005577;
     }
     .banner {
       position: sticky;
@@ -75,8 +78,6 @@
       cursor: pointer;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       font-size: 1.1rem;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
     }
     .banner button:hover {
       background: #e0e0e0;
@@ -98,18 +99,13 @@
       text-align: center;
       text-decoration: none;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-      border: none;
-      outline: none;
       display: flex;
       flex-direction: column;
       align-items: center;
-      font-size: 1rem;
     }
     .card:hover {
       transform: translateY(-10px);
       box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-      background: #e0f7fa;
     }
     .card h4 {
       color: #0088cc;
@@ -162,41 +158,110 @@
       margin-top: 1rem;
       border-radius: 5px;
     }
+    @media (max-width: 900px) {
+      .card-grid {
+        gap: 1rem;
+      }
+      .card {
+        width: 45vw;
+        min-width: 180px;
+        max-width: 340px;
+        padding: 1.2rem;
+      }
+    }
+    @media (max-width: 700px) {
+      body {
+        padding: 0.3rem;
+      }
+      header, footer {
+        padding: 0.7rem 0;
+      }
+      nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+      }
+      nav a {
+        margin: 0.22rem 0;
+        width: 95vw;
+        max-width: 350px;
+      }
+      .banner {
+        padding: 1.2rem 0.4rem;
+        font-size: 1rem;
+      }
+      .card-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.2rem;
+        padding: 1rem 0;
+      }
+      .card {
+        width: 90vw;
+        min-width: 120px;
+        max-width: 400px;
+        padding: 1rem;
+      }
+      .contact-section {
+        padding: 1rem 0.3rem;
+      }
+      .contact-section form {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+      }
+      .contact-section button {
+        grid-column: span 1;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Silzeycom</h1>
-    <div class="header-buttons">
-      <button onclick="location.href='https://silzey.github.io/mkt/my-website/index.html'">Home</button>
-      <button onclick="location.href='https://silzey.github.io/mkt/my-website/about.html'">About</button>
-      <button onclick="location.href='https://silzey.github.io/mkt/my-website/contact.html'">Contact</button>
-    </div>
+    <nav>
+      <a href="https://silzey.github.io/mkt/my-website/index.html">Home</a>
+      <a href="https://silzey.github.io/mkt/my-website/about.html">About</a>
+      <a href="https://silzey.github.io/mkt/my-website/contact.html">Contact</a>
+      <a href="https://silzey.github.io/mkt/my-website/analytics.html">Analytics</a>
+      <a href="https://silzey.github.io/mkt/my-website/pos-integration.html">POS Integration</a>
+      <a href="https://silzey.github.io/mkt/my-website/email-marketing.html">Email Marketing</a>
+      <a href="https://silzey.github.io/mkt/my-website/sms-campaigns.html">SMS Campaigns</a>
+      <a href="https://silzey.github.io/mkt/my-website/consulting-services.html">Consulting</a>
+      <a href="https://silzey.github.io/mkt/my-website/brand-design.html">Brand Design</a>
+      <a href="https://silzey.github.io/mkt/my-website/ad-campaigns.html">Ad Campaigns</a>
+      <a href="https://silzey.github.io/mkt/my-website/seo-web.html">SEO & Web</a>
+      <a href="https://silzey.github.io/mkt/my-website/influencer-collabs.html">Influencer Collabs</a>
+      <a href="https://silzey.github.io/mkt/my-website/customer-loyalty.html">Loyalty</a>
+      <a href="https://silzey.github.io/mkt/my-website/market-research.html">Market Research</a>
+      <a href="https://silzey.github.io/mkt/my-website/social-strategy.html">Social Strategy</a>
+      <a href="https://silzey.github.io/mkt/my-website/content-creation.html">Content Creation</a>
+      <a href="https://silzey.github.io/mkt/my-website/data-security.html">Data Security</a>
+      <a href="https://silzey.github.io/mkt/my-website/event-promotion.html">Event Promotion</a>
+    </nav>
   </header>
 
   <div class="banner">
     <h2>Dispensary Marketing, Simplified</h2>
     <p>Silzeycom delivers sleek consulting tools and smart analytics for modern cannabis brands.</p>
-    <button onclick="location.href='https://silzey.github.io/mkt/my-website/get-started.html'">Get Started</button>
+    <button onclick="location.href='get-started.html'">Get Started</button>
   </div>
 
   <section class="card-grid">
-    <button class="card" onclick="location.href='https://silzey.github.io/mkt/my-website/getstarted.html'"><h4>Get started</h4><p>get started.</p></button>
-    <button class="card" onclick="location.href='https://silzey.github.io/mkt/my-website/analytics.html'"><h4>Analytics</h4><p>Track growth with intelligent dashboards.</p></button>
-    <button class="card" onclick="location.href='https://silzey.github.io/mkt/my-website/pos-integration.html'"><h4>POS Integration</h4><p>Connect your POS with marketing.</p></button>
-    <button class="card" onclick="location.href='https://silzey.github.io/mkt/my-website/email-marketing.html'"><h4>Email Marketing</h4><p>Automated, personalized campaigns.</p></button>
-    <button class="card" onclick="location.href='https://silzey.github.io/mkt/my-website/sms-campaigns.html'"><h4>SMS Campaigns</h4><p>Engage via text messages.</p></button>
-    <button class="card" onclick="location.href='https://silzey.github.io/mkt/my-website/consulting-services.html'"><h4>Consulting Services</h4><p>Business guidance for cannabis brands.</p></button>
-    <button class="card" onclick="location.href='https://silzey.github.io/mkt/my-website/brand-design.html'"><h4>Brand Design</h4><p>Create sleek brand identity.</p></button>
-    <button class="card" onclick="location.href='https://silzey.github.io/mkt/my-website/ad-campaigns.html'"><h4>Ad Campaigns</h4><p>Run performance-driven ads.</p></button>
-    <button class="card" onclick="location.href='https://silzey.github.io/mkt/my-website/seo-web.html'"><h4>SEO & Web</h4><p>Boost your online visibility.</p></button>
-    <button class="card" onclick="location.href='https://silzey.github.io/mkt/my-website/influencer-collabs.html'"><h4>Influencer Collabs</h4><p>Partner with creators to grow.</p></button>
-    <button class="card" onclick="location.href='https://silzey.github.io/mkt/my-website/customer-loyalty.html'"><h4>Loyalty Programs</h4><p>Enhance retention and engagement.</p></button>
-    <button class="card" onclick="location.href='https://silzey.github.io/mkt/my-website/market-research.html'"><h4>Market Research</h4><p>Make decisions based on insights.</p></button>
-    <button class="card" onclick="location.href='https://silzey.github.io/mkt/my-website/social-strategy.html'"><h4>Social Strategy</h4><p>Guidance for platform marketing.</p></button>
-    <button class="card" onclick="location.href='https://silzey.github.io/mkt/my-website/content-creation.html'"><h4>Content Creation</h4><p>Graphics and media production.</p></button>
-    <button class="card" onclick="location.href='https://silzey.github.io/mkt/my-website/data-security.html'"><h4>Data Security</h4><p>Protect your customer data.</p></button>
-    <button class="card" onclick="location.href='https://silzey.github.io/mkt/my-website/event-promotion.html'"><h4>Event Promotion</h4><p>Maximize event attendance.</p></button>
+    <a href="analytics.html" class="card"><h4>Analytics</h4><p>Track growth with intelligent dashboards.</p></a>
+    <a href="pos-integration.html" class="card"><h4>POS Integration</h4><p>Connect your POS with marketing.</p></a>
+    <a href="email-marketing.html" class="card"><h4>Email Marketing</h4><p>Automated, personalized campaigns.</p></a>
+    <a href="sms-campaigns.html" class="card"><h4>SMS Campaigns</h4><p>Engage via text messages.</p></a>
+    <a href="consulting-services.html" class="card"><h4>Consulting Services</h4><p>Business guidance for cannabis brands.</p></a>
+    <a href="brand-design.html" class="card"><h4>Brand Design</h4><p>Create sleek brand identity.</p></a>
+    <a href="ad-campaigns.html" class="card"><h4>Ad Campaigns</h4><p>Run performance-driven ads.</p></a>
+    <a href="seo-web.html" class="card"><h4>SEO & Web</h4><p>Boost your online visibility.</p></a>
+    <a href="influencer-collabs.html" class="card"><h4>Influencer Collabs</h4><p>Partner with creators to grow.</p></a>
+    <a href="customer-loyalty.html" class="card"><h4>Loyalty Programs</h4><p>Enhance retention and engagement.</p></a>
+    <a href="market-research.html" class="card"><h4>Market Research</h4><p>Make decisions based on insights.</p></a>
+    <a href="social-strategy.html" class="card"><h4>Social Strategy</h4><p>Guidance for platform marketing.</p></a>
+    <a href="content-creation.html" class="card"><h4>Content Creation</h4><p>Graphics and media production.</p></a>
+    <a href="data-security.html" class="card"><h4>Data Security</h4><p>Protect your customer data.</p></a>
+    <a href="event-promotion.html" class="card"><h4>Event Promotion</h4><p>Maximize event attendance.</p></a>
   </section>
 
   <section class="contact-section">
@@ -222,6 +287,7 @@
   <script>
     const form = document.getElementById('contactForm');
     const message = document.getElementById('successMessage');
+
     form.addEventListener('submit', function(e) {
       e.preventDefault();
       form.style.display = 'none';
@@ -233,5 +299,6 @@
       }, 3000);
     });
   </script>
+
 </body>
 </html>
