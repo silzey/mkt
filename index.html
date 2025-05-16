@@ -82,6 +82,47 @@
       color: #333;
       font-size: 1rem;
     }
+    .contact-section {
+      background: #0088cc;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    .contact-section h2 {
+      margin-bottom: 1rem;
+    }
+    .contact-section form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      max-width: 600px;
+      margin: auto;
+    }
+    .contact-section input,
+    .contact-section button {
+      padding: 0.75rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    .contact-section input {
+      color: #333;
+    }
+    .contact-section button {
+      grid-column: span 2;
+      background: white;
+      color: #0088cc;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .success-message {
+      display: none;
+      background: white;
+      color: #0088cc;
+      padding: 1rem;
+      margin-top: 1rem;
+      border-radius: 5px;
+    }
   </style>
 </head>
 <body>
@@ -116,9 +157,39 @@
     <a href="event-promotion.html" class="card"><h4>Event Promotion</h4><p>Maximize event attendance.</p></a>
   </section>
 
+  <section class="contact-section">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <input type="text" placeholder="First Name" required>
+      <input type="text" placeholder="Last Name" required>
+      <input type="text" placeholder="Address" required>
+      <input type="text" placeholder="City" required>
+      <input type="text" placeholder="State" required>
+      <input type="text" placeholder="Zip Code" required>
+      <input type="tel" placeholder="Phone Number" required>
+      <input type="email" placeholder="Email Address" required>
+      <button type="submit">Submit</button>
+    </form>
+    <div class="success-message" id="successMessage">Thank you for contacting us!</div>
+  </section>
+
   <footer>
     <p>&copy; 2025 Silzeycom. All rights reserved.</p>
   </footer>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const message = document.getElementById('successMessage');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      form.style.display = 'none';
+      message.style.display = 'block';
+      setTimeout(() => {
+        message.style.display = 'none';
+      }, 3000);
+    });
+  </script>
 </body>
 </html>
 
