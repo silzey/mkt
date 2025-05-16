@@ -9,6 +9,7 @@
   <meta name="theme-color" content="#00aaff"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     :root {
       --main-text: #1d1d1f;
@@ -17,42 +18,35 @@
       --dark-blue: #0088cc;
       --shadow-color: rgba(0, 0, 0, 0.2);
     }
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     html, body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background-color: var(--light-gray);
       color: var(--main-text);
       line-height: 1.5;
     }
-
     .container {
       max-width: 1100px;
       margin: auto;
       padding: 3rem 1rem;
     }
-
     header {
       text-align: center;
       padding: 2rem 0;
       background: #fff;
       box-shadow: 0 4px 12px var(--shadow-color);
     }
-
     header h1 {
       font-weight: 600;
       font-size: 2rem;
     }
-
     nav {
       margin-top: 1rem;
     }
-
     nav a {
       text-decoration: none;
       color: var(--main-text);
@@ -60,11 +54,9 @@
       font-size: 1rem;
       transition: color 0.3s ease;
     }
-
     nav a:hover {
       color: var(--blue);
     }
-
     .hero {
       background: linear-gradient(to right, var(--blue), var(--dark-blue));
       color: #fff;
@@ -72,19 +64,16 @@
       text-align: center;
       box-shadow: 0 6px 16px var(--shadow-color);
     }
-
     .hero h2 {
       font-size: 3rem;
       font-weight: 600;
       margin-bottom: 1rem;
     }
-
     .hero p {
       font-size: 1.2rem;
       max-width: 600px;
       margin: 0 auto 2rem;
     }
-
     .hero .btn {
       display: inline-block;
       background: #fff;
@@ -97,31 +86,26 @@
       box-shadow: 0 4px 12px var(--shadow-color);
       transition: background 0.3s ease, color 0.3s ease;
     }
-
     .hero .btn:hover {
       background: #e0e0e0;
       color: var(--dark-blue);
     }
-
     .features {
       text-align: center;
       padding: 5rem 1rem;
     }
-
     .features h3 {
       font-size: 2rem;
       font-weight: 600;
       margin-bottom: 2rem;
       color: var(--blue);
     }
-
     .cards {
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
       justify-content: center;
     }
-
     .card {
       background: linear-gradient(to bottom right, #ffffff, #e6f7ff);
       padding: 2rem;
@@ -131,32 +115,37 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       perspective: 1000px;
     }
-
     .card:hover {
       transform: translateY(-10px) scale(1.03);
       box-shadow: 0 15px 40px var(--shadow-color);
     }
-
     .card h4 {
       font-size: 1.4rem;
       margin-bottom: 0.5rem;
       color: var(--dark-blue);
     }
-
     .card p {
       font-size: 1rem;
       color: #333;
     }
-
-    .about,
-    .contact {
+    .about, .contact, .gallery, .charts {
       padding: 4rem 1rem;
       text-align: center;
       background: #fff;
       margin-top: 2rem;
       box-shadow: 0 4px 12px var(--shadow-color);
     }
-
+    .gallery img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px var(--shadow-color);
+      margin: 1rem;
+      width: 300px;
+    }
+    .charts canvas {
+      margin: 2rem auto;
+      max-width: 600px;
+    }
     .contact form {
       max-width: 400px;
       margin: auto;
@@ -164,7 +153,6 @@
       flex-direction: column;
       gap: 1rem;
     }
-
     input, textarea {
       padding: 1rem;
       border: 1px solid #ccc;
@@ -172,7 +160,6 @@
       font-size: 1rem;
       box-shadow: 0 2px 6px rgba(0,0,0,0.08);
     }
-
     button.btn {
       background: var(--blue);
       color: white;
@@ -184,11 +171,9 @@
       box-shadow: 0 4px 12px var(--shadow-color);
       transition: background 0.3s ease;
     }
-
     button.btn:hover {
       background: var(--dark-blue);
     }
-
     footer {
       text-align: center;
       padding: 2rem 1rem;
@@ -199,98 +184,55 @@
 </head>
 <body>
 
-  <header>
-    <h1>Silzeycom</h1>
-    <nav>
-      <a href="#features">Features</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <!-- Existing sections remain -->
 
-  <section class="hero">
-    <h2>Cannabis Marketing, Simplified</h2>
-    <p>Silzeycom delivers sleek consulting solutions and powerful tools for cannabis businesses.</p>
-    <a href="#contact" class="btn">Get Started</a>
-  </section>
-
-  <section id="features" class="features">
+  <section class="charts" id="charts">
     <div class="container">
-      <h3>What Silzeycom Offers</h3>
-      <div class="cards">
-        <div class="card">
-          <h4>Analytics & Reporting</h4>
-          <p>Track engagement, sales, and performance across all platforms with clarity.</p>
-        </div>
-        <div class="card">
-          <h4>POS Integrations</h4>
-          <p>Seamlessly connect your point-of-sale system to your marketing efforts.</p>
-        </div>
-        <div class="card">
-          <h4>Social Media Management</h4>
-          <p>Automate, schedule, and analyze your cannabis brand’s social presence.</p>
-        </div>
-        <div class="card">
-          <h4>Email & SMS Campaigns</h4>
-          <p>Build loyalty and boost retention with targeted customer communication.</p>
-        </div>
-        <div class="card">
-          <h4>Consulting & Strategy</h4>
-          <p>Expert guidance for compliance, branding, and growth within the cannabis space.</p>
-        </div>
-        <div class="card">
-          <h4>Creative Services</h4>
-          <p>Design assets and branding tailored for modern dispensary marketing.</p>
-        </div>
-        <div class="card">
-          <h4>Paid Advertising</h4>
-          <p>Drive conversions with data-backed campaigns tailored to cannabis audiences.</p>
-        </div>
-        <div class="card">
-          <h4>SEO & Web Optimization</h4>
-          <p>Improve visibility and search ranking to attract and retain customers.</p>
-        </div>
-      </div>
+      <h3>Business Insights</h3>
+      <canvas id="salesChart"></canvas>
+      <canvas id="customerChart"></canvas>
     </div>
   </section>
-
-  <section id="about" class="about">
-    <div class="container">
-      <h3>About Silzeycom</h3>
-      <p>Silzeycom is a creative marketing and consulting firm serving the cannabis industry. We help dispensaries grow through clean design, smart tools, and personalized strategy.</p>
-    </div>
-  </section>
-
-  <section id="contact" class="contact">
-    <div class="container">
-      <h3>Contact Us</h3>
-      <form>
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" rows="4" required></textarea>
-        <button type="submit" class="btn">Send Message</button>
-      </form>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Silzeycom. Marketing and consulting for modern cannabis businesses.</p>
-  </footer>
 
   <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('service-worker.js')
-          .then(reg => console.log('Service worker registered.', reg))
-          .catch(err => console.error('Service worker registration failed:', err));
-      });
-    }
+    const salesCtx = document.getElementById('salesChart').getContext('2d');
+    new Chart(salesCtx, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+        datasets: [{
+          label: 'Monthly Sales ($K)',
+          data: [12, 19, 14, 22, 18],
+          backgroundColor: 'rgba(0, 170, 255, 0.2)',
+          borderColor: '#00aaff',
+          borderWidth: 2,
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: { y: { beginAtZero: true } }
+      }
+    });
 
-    document.querySelector("form").addEventListener("submit", function (e) {
-      e.preventDefault();
-      alert("Message sent! We'll be in touch soon.");
-      this.reset();
+    const customerCtx = document.getElementById('customerChart').getContext('2d');
+    new Chart(customerCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        datasets: [{
+          label: 'Customer Visits',
+          data: [55, 49, 60, 70, 91, 120, 105],
+          backgroundColor: '#00aaff'
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: { y: { beginAtZero: true } }
+      }
     });
   </script>
+
 </body>
 </html>
+
