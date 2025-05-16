@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+place the 10 cards back that represent of this marketing and consulting firm keep the bluue and. the apple look but the words only no pictures fixi thisii code <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -18,7 +19,6 @@
       --blue: #00aaff;
       --dark-blue: #0088cc;
       --shadow-color: rgba(0, 0, 0, 0.2);
-      --card-glow: rgba(0, 170, 255, 0.3);
     }
     * {
       margin: 0;
@@ -30,20 +30,17 @@
       background-color: var(--light-gray);
       color: var(--main-text);
       line-height: 1.5;
-      transition: background 0.3s ease, color 0.3s ease;
     }
-    body.dark {
-      background-color: #1d1d1f;
-      color: #f5f5f7;
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 3rem 1rem;
     }
     header {
       text-align: center;
       padding: 2rem 0;
       background: #fff;
       box-shadow: 0 4px 12px var(--shadow-color);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
     }
     header h1 a {
       text-decoration: none;
@@ -95,19 +92,6 @@
       background: #e0e0e0;
       color: var(--dark-blue);
     }
-    /* Canvas container */
-    #canvas-container {
-      display: flex;
-      justify-content: center;
-      margin: 3rem 1rem;
-    }
-    canvas {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px var(--shadow-color);
-      max-width: 100%;
-      height: auto;
-    }
     .features {
       text-align: center;
       padding: 5rem 1rem;
@@ -128,17 +112,16 @@
       background: linear-gradient(to bottom right, #ffffff, #e6f7ff);
       padding: 2rem;
       border-radius: 20px;
-      box-shadow: 0 10px 30px var(--card-glow);
+      box-shadow: 0 10px 30px var(--shadow-color);
       width: 250px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       perspective: 1000px;
       text-decoration: none;
       display: block;
-      animation: fadeIn 0.6s ease-in-out;
     }
     .card:hover {
       transform: translateY(-10px) scale(1.03);
-      box-shadow: 0 15px 40px var(--card-glow);
+      box-shadow: 0 15px 40px var(--shadow-color);
     }
     .card h4 {
       font-size: 1.4rem;
@@ -149,16 +132,23 @@
       font-size: 1rem;
       color: #333;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .about, .contact {
+    .about, .contact, .gallery, .charts {
       padding: 4rem 1rem;
       text-align: center;
       background: #fff;
       margin-top: 2rem;
       box-shadow: 0 4px 12px var(--shadow-color);
+    }
+    .gallery img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px var(--shadow-color);
+      margin: 1rem;
+      width: 300px;
+    }
+    .charts canvas {
+      margin: 2rem auto;
+      max-width: 600px;
     }
     .contact form {
       max-width: 400px;
@@ -194,112 +184,93 @@
       font-size: 0.9rem;
       color: #555;
     }
-    @media (max-width: 768px) {
-      .hero h2 {
-        font-size: 2rem;
-      }
-      .cards {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
   </style>
 </head>
 <body>
+
   <header>
     <h1><a href="#hero">Silzeycom</a></h1>
     <nav>
       <a href="#features">Features</a>
       <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#charts">Insights</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
+
   <section class="hero" id="hero">
     <h2>Dispensary Marketing, Simplified</h2>
     <p>Silzeycom delivers sleek consulting tools and smart analytics for modern cannabis brands.</p>
     <a href="#contact" class="btn">Get Started</a>
   </section>
 
-  <!-- Canvas Container -->
-  <section id="canvas-container">
-    <canvas id="myCanvas" width="600" height="400"></canvas>
-  </section>
-
   <section class="features" id="features">
     <div class="container">
       <h3>What Silzeycom Offers</h3>
       <div class="cards">
-        <a href="Analytics.html" class="card"><h4>Analytics</h4><p>Track your dispensary's growth with intelligent dashboards.</p></a>
-        <a href="POS_Integration.html" class="card"><h4>POS Integration</h4><p>Connect sales systems with marketing tools seamlessly.</p></a>
-        <a href="Email_Marketing.html" class="card"><h4>Email Marketing</h4><p>Engage your customers with beautiful campaigns.</p></a>
-        <a href="SMS_Campaigns.html" class="card"><h4>SMS Campaigns</h4><p>Reach your audience directly with text messaging.</p></a>
-        <a href="Consulting_Services.html" class="card"><h4>Consulting</h4><p>Expert advice tailored to your business goals.</p></a>
-        <a href="Compliance.html" class="card"><h4>Compliance Tools</h4><p>Stay up to date with regulations easily.</p></a>
+        <div class="card">
+          <h4>Analytics</h4>
+          <p>Track your dispensary's growth with intelligent, intuitive data dashboards.</p>
+        </div>
+        <div class="card">
+          <h4>POS Integration</h4>
+          <p>Connect your sales system with marketing tools for smoother operations.</p>
+        </div>
+        <div class="card">
+          <h4>Email Marketing</h4>
+          <p>Send beautiful campaigns and automate customer engagement.</p>
+        </div>
+        <div class="card">
+          <h4>SMS Campaigns</h4>
+          <p>Direct, effective communication with your customer base via text.</p>
+        </div>
+        <div class="card">
+          <h4>Consulting Services</h4>
+          <p>Expert cannabis industry guidance, strategy, and compliance support.</p>
+        </div>
+        <div class="card">
+          <h4>Brand Design</h4>
+          <p>Craft a recognizable, professional identity tailored to your dispensary.</p>
+        </div>
+        <div class="card">
+          <h4>Ad Campaigns</h4>
+          <p>Run optimized, ROI-focused advertising across platforms like Meta and Google.</p>
+        </div>
+        <div class="card">
+          <h4>SEO & Web Presence</h4>
+          <p>Boost discoverability with cannabis-friendly search engine strategies.</p>
+        </div>
+        <div class="card">
+          <h4>Influencer Collabs</h4>
+          <p>Partner with local creators to boost visibility and trust.</p>
+        </div>
+        <div class="card">
+          <h4>Customer Loyalty</h4>
+          <p>Build long-term relationships with loyalty programs and referral incentives.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="about" id="about">
-    <h3>About Silzeycom</h3>
-    <p>We are a team of marketing professionals dedicated to elevating cannabis dispensaries through technology and creativity.</p>
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <h3>Gallery</h3>
+      <img src="https://images.unsplash.com/photo-1578425575246-5aa0d1c6a68e?auto=format&fit=crop&w=600&q=80" alt="Dispensary 1">
+      <img src="https://images.unsplash.com/photo-1596743308780-4d5650af8d7c?auto=format&fit=crop&w=600&q=80" alt="Dispensary 2">
+      <img src="https://images.unsplash.com/photo-1605696723531-cc65efc42ee2?auto=format&fit=crop&w=600&q=80" alt="Cannabis Product">
+      <img src="https://images.unsplash.com/photo-1626231948897-1e390a7f745c?auto=format&fit=crop&w=600&q=80" alt="Vape Product">
+      <img src="https://images.unsplash.com/photo-1622473592342-6c5f7a7d22e2?auto=format&fit=crop&w=600&q=80" alt="Cannabis Flower">
+    </div>
   </section>
 
-  <section class="contact" id="contact">
-    <h3>Contact Us</h3>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea rows="4" placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn">Send Message</button>
-    </form>
+  <section class="charts" id="charts">
+    <div class="container">
+      <h3>Business Insights</h3>
+      <canvas id="salesChart"></canvas>
+      <canvas id="customerChart"></canvas>
+    </div>
   </section>
 
-  <footer>
-    &copy; 2025 Silzeycom. All rights reserved.
-  </footer>
-
-  <script>
-    // Canvas drawing example: animate a bouncing ball
-    const canvas = document.getElementById('myCanvas');
-    const ctx = canvas.getContext('2d');
-
-    let ball = {
-      x: 100,
-      y: 100,
-      radius: 20,
-      dx: 3,
-      dy: 3,
-      color: 'rgba(0, 170, 255, 0.8)'
-    };
-
-    function drawBall() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.beginPath();
-      ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
-      ctx.fillStyle = ball.color;
-      ctx.fill();
-      ctx.closePath();
-    }
-
-    function update() {
-      drawBall();
-
-      ball.x += ball.dx;
-      ball.y += ball.dy;
-
-      // Bounce off left or right walls
-      if(ball.x + ball.radius > canvas.width || ball.x - ball.radius < 0) {
-        ball.dx = -ball.dx;
-      }
-      // Bounce off top or bottom walls
-      if(ball.y + ball.radius > canvas.height || ball.y - ball.radius < 0) {
-        ball.dy = -ball.dy;
-      }
-
-      requestAnimationFrame(update);
-    }
-
-    update();
-  </script>
 </body>
 </html>
