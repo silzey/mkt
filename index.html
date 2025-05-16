@@ -18,6 +18,7 @@
       --blue: #00aaff;
       --dark-blue: #0088cc;
       --shadow-color: rgba(0, 0, 0, 0.2);
+      --card-glow: rgba(0, 170, 255, 0.3);
     }
     * {
       margin: 0;
@@ -114,7 +115,7 @@
       background: linear-gradient(to bottom right, #ffffff, #e6f7ff);
       padding: 2rem;
       border-radius: 20px;
-      box-shadow: 0 10px 30px var(--shadow-color);
+      box-shadow: 0 10px 30px var(--card-glow);
       width: 250px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       perspective: 1000px;
@@ -124,7 +125,7 @@
     }
     .card:hover {
       transform: translateY(-10px) scale(1.03);
-      box-shadow: 0 15px 40px var(--shadow-color);
+      box-shadow: 0 15px 40px var(--card-glow);
     }
     .card h4 {
       font-size: 1.4rem;
@@ -198,66 +199,51 @@
       <a href="#features">Features</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
-      <a href="#" onclick="toggleDarkMode()">Dark Mode</a>
     </nav>
   </header>
-
   <section class="hero" id="hero">
     <h2>Dispensary Marketing, Simplified</h2>
     <p>Silzeycom delivers sleek consulting tools and smart analytics for modern cannabis brands.</p>
     <a href="#contact" class="btn">Get Started</a>
   </section>
-
   <section class="features" id="features">
     <div class="container">
       <h3>What Silzeycom Offers</h3>
       <div class="cards">
-        <a href="analytics.html" class="card"><h4>Analytics</h4><p>Track your dispensary's growth with intelligent dashboards.</p></a>
-        <a href="pos-integration.html" class="card"><h4>POS Integration</h4><p>Connect your POS system with your marketing.</p></a>
-        <a href="email-marketing.html" class="card"><h4>Email Marketing</h4><p>Send automated and personalized campaigns.</p></a>
-        <a href="sms-campaigns.html" class="card"><h4>SMS Campaigns</h4><p>Engage customers directly via text.</p></a>
-        <a href="consulting-services.html" class="card"><h4>Consulting Services</h4><p>Professional cannabis business guidance.</p></a>
-        <a href="brand-design.html" class="card"><h4>Brand Design</h4><p>Build a modern, sleek identity.</p></a>
-        <a href="ad-campaigns.html" class="card"><h4>Ad Campaigns</h4><p>Run ROI-focused ads across platforms.</p></a>
-        <a href="seo-web.html" class="card"><h4>SEO & Web Presence</h4><p>Improve online visibility with SEO.</p></a>
-        <a href="influencer-collabs.html" class="card"><h4>Influencer Collabs</h4><p>Collaborate with creators to grow your brand.</p></a>
-        <a href="customer-loyalty.html" class="card"><h4>Customer Loyalty</h4><p>Retention through programs and rewards.</p></a>
-        <a href="market-research.html" class="card"><h4>Market Research</h4><p>Informed decisions through insights.</p></a>
-        <a href="social-strategy.html" class="card"><h4>Social Strategy</h4><p>Platform-specific marketing guidance.</p></a>
-        <a href="content-creation.html" class="card"><h4>Content Creation</h4><p>Videos, graphics, and social media posts.</p></a>
-        <a href="data-security.html" class="card"><h4>Data Security</h4><p>Keep customer data safe and compliant.</p></a>
-        <a href="event-promotion.html" class="card"><h4>Event Promotion</h4><p>Drive attendance to your brand events.</p></a>
+        <a href="Analytics.html" class="card"><h4>Analytics</h4><p>Track your dispensary's growth with intelligent dashboards.</p></a>
+        <a href="POS_Integration.html" class="card"><h4>POS Integration</h4><p>Connect sales systems with marketing tools seamlessly.</p></a>
+        <a href="Email_Marketing.html" class="card"><h4>Email Marketing</h4><p>Engage your customers with beautiful campaigns.</p></a>
+        <a href="SMS_Campaigns.html" class="card"><h4>SMS Campaigns</h4><p>Reach your audience directly with text messaging.</p></a>
+        <a href="Consulting_Services.html" class="card"><h4>Consulting Services</h4><p>Get expert cannabis industry guidance and strategy.</p></a>
+        <a href="Brand_Design.html" class="card"><h4>Brand Design</h4><p>Create a unique, professional brand for your business.</p></a>
+        <a href="Ad_Campaigns.html" class="card"><h4>Ad Campaigns</h4><p>Run high-ROI campaigns across top ad platforms.</p></a>
+        <a href="SEO_Web_Presence.html" class="card"><h4>SEO & Web Presence</h4><p>Improve your online visibility effectively.</p></a>
+        <a href="Influencer_Collabs.html" class="card"><h4>Influencer Collabs</h4><p>Partner with trusted voices to expand your reach.</p></a>
+        <a href="Customer_Loyalty.html" class="card"><h4>Customer Loyalty</h4><p>Build long-term customer relationships with rewards.</p></a>
+        <a href="Data_Security.html" class="card"><h4>Data Security</h4><p>Keep your business and customer data safe and secure.</p></a>
+        <a href="Market_Research.html" class="card"><h4>Market Research</h4><p>Understand your market and stay ahead of trends.</p></a>
+        <a href="Reputation_Management.html" class="card"><h4>Reputation Management</h4><p>Protect and grow your online brand reputation.</p></a>
+        <a href="Affiliate_Programs.html" class="card"><h4>Affiliate Programs</h4><p>Launch affiliate partnerships to expand your network.</p></a>
+        <a href="CRM_Solutions.html" class="card"><h4>CRM Solutions</h4><p>Manage customer relationships with powerful tools.</p></a>
       </div>
     </div>
   </section>
-
   <section class="about" id="about">
-    <div class="container">
-      <h3>About Silzeycom</h3>
-      <p>Silzeycom is a marketing and consulting firm dedicated to helping cannabis businesses thrive in the digital world. We deliver powerful strategies and data-driven tools with a clean, modern design philosophy.</p>
-    </div>
+    <h3>About Us</h3>
+    <p>Silzeycom is a modern marketing and consulting firm built to serve cannabis businesses of all sizes. Our mission is to simplify success with data-driven tools and expert services.</p>
   </section>
-
   <section class="contact" id="contact">
-    <div class="container">
-      <h3>Contact Us</h3>
-      <form onsubmit="event.preventDefault(); alert('Message sent successfully!');">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea rows="5" placeholder="Your Message" required></textarea>
-        <button class="btn" type="submit">Send Message</button>
-      </form>
-    </div>
+    <h3>Contact Us</h3>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button class="btn" type="submit">Send Message</button>
+    </form>
   </section>
-
   <footer>
-    <p>&copy; 2025 Silzeycom. All rights reserved.</p>
+    &copy; 2025 Silzeycom. All rights reserved.
   </footer>
-
-  <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark');
-    }
-  </script>
 </body>
 </html>
+
