@@ -1,6 +1,7 @@
 your-current-repo/
 └── my-website/
     ├── index.html
+    ├── getstarted.html
     ├── analytics.html
     ├── pos-integration.html
     ├── email-marketing.html
