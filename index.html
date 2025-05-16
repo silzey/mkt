@@ -40,9 +40,9 @@
       background: #fff;
       box-shadow: 0 4px 12px var(--shadow-color);
     }
-    header h1 {
-      font-weight: 600;
-      font-size: 2rem;
+    header h1 a {
+      text-decoration: none;
+      color: var(--main-text);
     }
     nav {
       margin-top: 1rem;
@@ -114,6 +114,8 @@
       width: 250px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       perspective: 1000px;
+      text-decoration: none;
+      display: block;
     }
     .card:hover {
       transform: translateY(-10px) scale(1.03);
@@ -184,7 +186,42 @@
 </head>
 <body>
 
-  <!-- Existing sections remain -->
+  <header>
+    <h1><a href="#hero">Silzeycom</a></h1>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#charts">Insights</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="hero">
+    <h2>Dispensary Marketing, Simplified</h2>
+    <p>Silzeycom delivers sleek consulting tools and smart analytics for modern cannabis brands.</p>
+    <a href="#contact" class="btn">Get Started</a>
+  </section>
+
+  <section class="features" id="features">
+    <div class="container">
+      <h3>What Silzeycom Offers</h3>
+      <div class="cards">
+        <!-- existing cards here -->
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <h3>Gallery</h3>
+      <img src="https://images.unsplash.com/photo-1578425575246-5aa0d1c6a68e?auto=format&fit=crop&w=600&q=80" alt="Dispensary 1">
+      <img src="https://images.unsplash.com/photo-1596743308780-4d5650af8d7c?auto=format&fit=crop&w=600&q=80" alt="Dispensary 2">
+      <img src="https://images.unsplash.com/photo-1605696723531-cc65efc42ee2?auto=format&fit=crop&w=600&q=80" alt="Cannabis Product">
+      <img src="https://images.unsplash.com/photo-1626231948897-1e390a7f745c?auto=format&fit=crop&w=600&q=80" alt="Vape Product">
+      <img src="https://images.unsplash.com/photo-1622473592342-6c5f7a7d22e2?auto=format&fit=crop&w=600&q=80" alt="Cannabis Flower">
+    </div>
+  </section>
 
   <section class="charts" id="charts">
     <div class="container">
@@ -194,45 +231,7 @@
     </div>
   </section>
 
-  <script>
-    const salesCtx = document.getElementById('salesChart').getContext('2d');
-    new Chart(salesCtx, {
-      type: 'line',
-      data: {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
-        datasets: [{
-          label: 'Monthly Sales ($K)',
-          data: [12, 19, 14, 22, 18],
-          backgroundColor: 'rgba(0, 170, 255, 0.2)',
-          borderColor: '#00aaff',
-          borderWidth: 2,
-          tension: 0.3
-        }]
-      },
-      options: {
-        responsive: true,
-        scales: { y: { beginAtZero: true } }
-      }
-    });
-
-    const customerCtx = document.getElementById('customerChart').getContext('2d');
-    new Chart(customerCtx, {
-      type: 'bar',
-      data: {
-        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-        datasets: [{
-          label: 'Customer Visits',
-          data: [55, 49, 60, 70, 91, 120, 105],
-          backgroundColor: '#00aaff'
-        }]
-      },
-      options: {
-        responsive: true,
-        scales: { y: { beginAtZero: true } }
-      }
-    });
-  </script>
-
 </body>
 </html>
+
 
