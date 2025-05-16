@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Marketing Pro</title>
+  <title>Silzeycom</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <meta name="theme-color" content="#00aaff"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
   <style>
@@ -197,7 +200,7 @@
 <body>
 
   <header>
-    <h1>Marketing Pro</h1>
+    <h1>Silzeycom</h1>
     <nav>
       <a href="#features">Features</a>
       <a href="#about">About</a>
@@ -206,34 +209,34 @@
   </header>
 
   <section class="hero">
-    <h2>Think Different, Market Smart</h2>
-    <p>Apple-inspired tools to elevate your brand. Clean. Bold. Effective.</p>
+    <h2>Dispensary Marketing, Simplified</h2>
+    <p>Silzeycom delivers sleek consulting tools and smart analytics for modern cannabis brands.</p>
     <a href="#contact" class="btn">Get Started</a>
   </section>
 
   <section id="features" class="features">
     <div class="container">
-      <h3>Features You'll Love</h3>
+      <h3>What Silzeycom Offers</h3>
       <div class="cards">
         <div class="card">
           <h4>Clean Analytics</h4>
-          <p>Visualize performance metrics with elegant charts and data panels.</p>
+          <p>Visualize dispensary performance with elegant, intuitive dashboards.</p>
         </div>
         <div class="card">
-          <h4>Real-Time Reporting</h4>
-          <p>Stay updated with live dashboards and instant insights.</p>
+          <h4>Real-Time Insights</h4>
+          <p>Stay informed on customer behaviors and trends as they happen.</p>
         </div>
         <div class="card">
-          <h4>Smart Automation</h4>
-          <p>Automate campaigns and optimize engagement with AI-driven tools.</p>
+          <h4>Campaign Automation</h4>
+          <p>Set, launch, and optimize promotions effortlessly across platforms.</p>
         </div>
         <div class="card">
-          <h4>Audience Segmentation</h4>
-          <p>Target the right people at the right time with smart filters.</p>
+          <h4>Consulting Services</h4>
+          <p>Custom-tailored strategy and compliance help for cannabis businesses.</p>
         </div>
         <div class="card">
-          <h4>Conversion Tracking</h4>
-          <p>Monitor user actions and understand what drives results.</p>
+          <h4>Growth Tools</h4>
+          <p>Expand reach and ROI with targeting, segmentation, and conversion tracking.</p>
         </div>
       </div>
     </div>
@@ -241,8 +244,8 @@
 
   <section id="about" class="about">
     <div class="container">
-      <h3>About Us</h3>
-      <p>We design marketing tools that feel as intuitive and beautiful as the products they support. Inspired by Apple, built for you.</p>
+      <h3>About Silzeycom</h3>
+      <p>We’re a creative marketing and consulting firm dedicated to helping dispensaries thrive with intuitive tools and smart strategies. Our designs are Apple-inspired — clean, bold, and effective.</p>
     </div>
   </section>
 
@@ -259,10 +262,18 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 Marketing Pro. Designed with Apple-style love.</p>
+    <p>&copy; 2025 Silzeycom. Marketing designed for modern dispensaries.</p>
   </footer>
 
   <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(reg => console.log('Service worker registered.', reg))
+          .catch(err => console.error('Service worker registration failed:', err));
+      });
+    }
+
     document.querySelector("form").addEventListener("submit", function (e) {
       e.preventDefault();
       alert("Message sent! We'll be in touch soon.");
@@ -271,4 +282,5 @@
   </script>
 </body>
 </html>
+
 
