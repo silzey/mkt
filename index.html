@@ -3,251 +3,63 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Silzeycom</title>
-  <link rel="icon" href="https://chatgpt.com/s/m_6826a85f85708191b1dab1b2a58a5e96" type="image/png">
-  <link rel="manifest" href="manifest.json">
-  <link rel="apple-touch-icon" href="icons/icon-192.png">
-  <meta name="theme-color" content="#00aaff"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <title>{{TITLE}}</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    :root {
-      --main-text: #1d1d1f;
-      --light-gray: #f5f5f7;
-      --blue: #00aaff;
-      --dark-blue: #0088cc;
-      --shadow-color: rgba(0, 0, 0, 0.2);
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    html, body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--light-gray);
-      color: var(--main-text);
-      line-height: 1.5;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-    body.dark {
-      background-color: #1d1d1f;
-      color: #f5f5f7;
-    }
-    header {
-      text-align: center;
-      padding: 2rem 0;
-      background: #fff;
-      box-shadow: 0 4px 12px var(--shadow-color);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    header h1 a {
-      text-decoration: none;
-      color: var(--main-text);
-    }
-    nav {
-      margin-top: 1rem;
-    }
-    nav a {
-      text-decoration: none;
-      color: var(--main-text);
-      margin: 0 1rem;
-      font-size: 1rem;
-      transition: color 0.3s ease;
-    }
-    nav a:hover {
-      color: var(--blue);
-    }
-    .hero {
-      background: linear-gradient(to right, var(--blue), var(--dark-blue));
-      color: #fff;
-      padding: 6rem 1rem;
-      text-align: center;
-      box-shadow: 0 6px 16px var(--shadow-color);
-    }
-    .hero h2 {
-      font-size: 3rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto 2rem;
-    }
-    .hero .btn {
-      display: inline-block;
-      background: #fff;
-      color: var(--blue);
-      padding: 0.9rem 2rem;
-      border-radius: 30px;
-      font-size: 1rem;
-      font-weight: 600;
-      text-decoration: none;
-      box-shadow: 0 4px 12px var(--shadow-color);
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-    .hero .btn:hover {
-      background: #e0e0e0;
-      color: var(--dark-blue);
-    }
-    .features {
-      text-align: center;
-      padding: 5rem 1rem;
-    }
-    .features h3 {
-      font-size: 2rem;
-      font-weight: 600;
-      margin-bottom: 2rem;
-      color: var(--blue);
-    }
-    .cards {
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 2rem; background: #f5f5f7; color: #1d1d1f; }
+    header, footer { background: #fff; text-align: center; padding: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    h1, h3 { color: #00aaff; }
+    p { line-height: 1.6; }
+    a { color: #0088cc; text-decoration: none; }
+    .card-grid {
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
       justify-content: center;
+      padding: 2rem 0;
     }
     .card {
       background: linear-gradient(to bottom right, #ffffff, #e6f7ff);
       padding: 2rem;
       border-radius: 20px;
-      box-shadow: 0 10px 30px var(--shadow-color);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       width: 250px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      perspective: 1000px;
+      text-align: center;
       text-decoration: none;
-      display: block;
-      animation: fadeIn 0.6s ease-in-out;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .card:hover {
-      transform: translateY(-10px) scale(1.03);
-      box-shadow: 0 15px 40px var(--shadow-color);
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
     }
-    .card h4 {
-      font-size: 1.4rem;
-      margin-bottom: 0.5rem;
-      color: var(--dark-blue);
-    }
-    .card p {
-      font-size: 1rem;
-      color: #333;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .about, .contact {
-      padding: 4rem 1rem;
-      text-align: center;
-      background: #fff;
-      margin-top: 2rem;
-      box-shadow: 0 4px 12px var(--shadow-color);
-    }
-    .contact form {
-      max-width: 400px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    input, textarea {
-      padding: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 1rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    }
-    button.btn {
-      background: var(--blue);
-      color: white;
-      padding: 1rem;
-      border: none;
-      border-radius: 30px;
-      font-size: 1rem;
-      cursor: pointer;
-      box-shadow: 0 4px 12px var(--shadow-color);
-      transition: background 0.3s ease;
-    }
-    button.btn:hover {
-      background: var(--dark-blue);
-    }
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      color: #555;
-    }
-    @media (max-width: 768px) {
-      .hero h2 {
-        font-size: 2rem;
-      }
-      .cards {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
+    .card h4 { color: #0088cc; margin-bottom: 1rem; }
+    .card p { color: #333; font-size: 1rem; }
   </style>
 </head>
 <body>
   <header>
-    <h1><a href="#hero">Silzeycom</a></h1>
+    <h1>Silzeycom</h1>
     <nav>
-      <a href="#features">Features</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-      <a href="#" onclick="toggleDarkMode()">Dark Mode</a>
+      <a href="index.html">Home</a>
     </nav>
   </header>
 
-  <section class="hero" id="hero">
-    <h2>Dispensary Marketing, Simplified</h2>
-    <p>Silzeycom delivers sleek consulting tools and smart analytics for modern cannabis brands.</p>
-    <a href="#contact" class="btn">Get Started</a>
-  </section>
-
-  <section class="features" id="features">
-    <div class="container">
-      <h3>What Silzeycom Offers</h3>
-      <div class="cards">
-        <a href="analytics.html" class="card"><h4>Analytics</h4><p>Track your dispensary's growth with intelligent dashboards.</p></a>
-        <a href="pos-integration.html" class="card"><h4>POS Integration</h4><p>Connect your POS system with your marketing.</p></a>
-        <a href="email-marketing.html" class="card"><h4>Email Marketing</h4><p>Send automated and personalized campaigns.</p></a>
-        <a href="sms-campaigns.html" class="card"><h4>SMS Campaigns</h4><p>Engage customers directly via text.</p></a>
-        <a href="consulting-services.html" class="card"><h4>Consulting Services</h4><p>Professional cannabis business guidance.</p></a>
-        <a href="brand-design.html" class="card"><h4>Brand Design</h4><p>Build a modern, sleek identity.</p></a>
-        <a href="ad-campaigns.html" class="card"><h4>Ad Campaigns</h4><p>Run ROI-focused ads across platforms.</p></a>
-        <a href="seo-web.html" class="card"><h4>SEO & Web Presence</h4><p>Improve online visibility with SEO.</p></a>
-        <a href="influencer-collabs.html" class="card"><h4>Influencer Collabs</h4><p>Collaborate with creators to grow your brand.</p></a>
-        <a href="customer-loyalty.html" class="card"><h4>Customer Loyalty</h4><p>Retention through programs and rewards.</p></a>
-        <a href="market-research.html" class="card"><h4>Market Research</h4><p>Informed decisions through insights.</p></a>
-        <a href="social-strategy.html" class="card"><h4>Social Strategy</h4><p>Platform-specific marketing guidance.</p></a>
-        <a href="content-creation.html" class="card"><h4>Content Creation</h4><p>Videos, graphics, and social media posts.</p></a>
-        <a href="data-security.html" class="card"><h4>Data Security</h4><p>Keep customer data safe and compliant.</p></a>
-        <a href="event-promotion.html" class="card"><h4>Event Promotion</h4><p>Drive attendance to your brand events.</p></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="about" id="about">
-    <div class="container">
-      <h3>About Silzeycom</h3>
-      <p>Silzeycom is a marketing and consulting firm dedicated to helping cannabis businesses thrive in the digital world. We deliver powerful strategies and data-driven tools with a clean, modern design philosophy.</p>
-    </div>
-  </section>
-
-  <section class="contact" id="contact">
-    <div class="container">
-      <h3>Contact Us</h3>
-      <form onsubmit="event.preventDefault(); alert('Message sent successfully!');">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea rows="5" placeholder="Your Message" required></textarea>
-        <button class="btn" type="submit">Send Message</button>
-      </form>
-    </div>
+  <section class="card-grid">
+    <a href="analytics.html" class="card"><h4>Analytics</h4><p>Track growth with intelligent dashboards.</p></a>
+    <a href="pos-integration.html" class="card"><h4>POS Integration</h4><p>Connect your POS with marketing.</p></a>
+    <a href="email-marketing.html" class="card"><h4>Email Marketing</h4><p>Automated, personalized campaigns.</p></a>
+    <a href="sms-campaigns.html" class="card"><h4>SMS Campaigns</h4><p>Engage via text messages.</p></a>
+    <a href="consulting-services.html" class="card"><h4>Consulting Services</h4><p>Business guidance for cannabis brands.</p></a>
+    <a href="brand-design.html" class="card"><h4>Brand Design</h4><p>Create sleek brand identity.</p></a>
+    <a href="ad-campaigns.html" class="card"><h4>Ad Campaigns</h4><p>Run performance-driven ads.</p></a>
+    <a href="seo-web.html" class="card"><h4>SEO & Web</h4><p>Boost your online visibility.</p></a>
+    <a href="influencer-collabs.html" class="card"><h4>Influencer Collabs</h4><p>Partner with creators to grow.</p></a>
+    <a href="customer-loyalty.html" class="card"><h4>Loyalty Programs</h4><p>Enhance retention and engagement.</p></a>
+    <a href="market-research.html" class="card"><h4>Market Research</h4><p>Make decisions based on insights.</p></a>
+    <a href="social-strategy.html" class="card"><h4>Social Strategy</h4><p>Guidance for platform marketing.</p></a>
+    <a href="content-creation.html" class="card"><h4>Content Creation</h4><p>Graphics and media production.</p></a>
+    <a href="data-security.html" class="card"><h4>Data Security</h4><p>Protect your customer data.</p></a>
+    <a href="event-promotion.html" class="card"><h4>Event Promotion</h4><p>Maximize event attendance.</p></a>
   </section>
 
   <footer>
@@ -255,9 +67,39 @@
   </footer>
 
   <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark');
-    }
+    const pages = [
+      "analytics", "pos-integration", "email-marketing", "sms-campaigns", "consulting-services",
+      "brand-design", "ad-campaigns", "seo-web", "influencer-collabs", "customer-loyalty",
+      "market-research", "social-strategy", "content-creation", "data-security", "event-promotion"
+    ];
+
+    const head = document.head.innerHTML;
+    const header = document.querySelector('header').outerHTML;
+    const footer = document.querySelector('footer').outerHTML;
+
+    pages.forEach(page => {
+      const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  ${head}
+  <title>${page.replace(/-/g, ' ')}</title>
+</head>
+<body>
+  ${header}
+  <main style="padding: 2rem; text-align: center;">
+    <h2>${page.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}</h2>
+    <p>Welcome to the ${page.replace(/-/g, ' ')} page. More content coming soon.</p>
+  </main>
+  ${footer}
+</body>
+</html>`;
+
+      const blob = new Blob([html], { type: "text/html" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = `${page}.html`;
+      a.click();
+    });
   </script>
 </body>
 </html>
